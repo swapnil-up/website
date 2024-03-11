@@ -1,33 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: Your Name - Blog & Portfolio
+---
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Your Portfolio</title>
-</head>
+<header>
+    <h1>Swapnil Upadhyay</h1>
+    <p>He codes and he writes</p>
+    <nav>
+        <ul>
+            <li><a href="{{ "/blog" | relative_url }}">Blog</a></li>
+        </ul>
+    </nav>
+</header>
 
-<body>
-    <header>
-        <h1>Your Name</h1>
-        <p>Web Developer | Designer</p>
-    </header>
+<section class="intro">
+    <p>Welcome. Everything is still under construction. Don't fall on the debris while you're here</p>
+</section>
 
-    <section class="main-content">
-        <h2>About Me</h2>
-        <p>
-            Welcome to my portfolio! This is just to check if the website runs for now.
-        </p>
-    </section>
+<section class="blog" id="blog">
+    <h2>Blog</h2>
+    <ul>
+        {% for post in site.posts %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+</section>
 
-    <section class="projects">
-    </section>
+<section class="portfolio">
+    <h2>Portfolio</h2>
+    <ul>
+        <li><a href="{{ "/portfolio/project1.html" | relative_url }}">Project 1</a></li>
+        <li><a href="{{ "/portfolio/project2.html" | relative_url }}">Project 2</a></li>
+        <!-- Add more projects as needed -->
+    </ul>
+</section>
 
-    <footer>
-        <p>Lots to come</p>
-    </footer>
-</body>
-
-</html>
+<footer>
+    <p>Contact me at github (swapnil-up)</p>
+</footer>
 

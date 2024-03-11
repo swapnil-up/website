@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <p>Web Developer | Designer</p>
+        <nav>
+            <ul>
+                <li><a href="{{ "/blog" | relative_url }}">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        {{ content }}
+    </div>
+
+    <footer>
+        <p>Contact me at: your.email@example.com</p>
+    </footer>
+</body>
+</html>
+
