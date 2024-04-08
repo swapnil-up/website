@@ -1,10 +1,9 @@
 ---
 layout: post
 title: "Anki for internalization of nuggets of wisdom"
+date:   2024-03-11 
+categories: musings
 ---
-
-
-# Anki for internalization of nuggets of wisdom
 
 Anki is a spaced repetition software that allows users to process a large amount of information into long term memory in the most efficient manner. It is best known for vocabulary memorization for languages and for medical students for their studies. But I believe that is limiting the scope of Anki to a very small group. I’d argue that this tool is one that’s able to be utilized throughout one’s life for accelerated learning.
 

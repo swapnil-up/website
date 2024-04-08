@@ -1,4 +1,9 @@
-Turn on greyscale
+---
+layout: post
+title:  "Turn on greyscale"
+date:   2024-04-07 
+categories: musings
+---
 
 I’ve been using greyscale almost full time on my phone these days and keep it on, on my laptop it’s more of a miss at the moment. Mostly because I haven’t made it automatic (changed since I started writing this article). I just realized that these days I don’t even remember if the greyscale is even on. That’s a pretty good achievement and here I’d like to explain why you should at least give greyscale a try.
 
