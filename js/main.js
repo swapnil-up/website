@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const pages = {
     home: `<h1>Site Under Maintenance</h1><p>We'll be back soon. Stay tuned!</p>`,
     writing: '<h1>Writing</h1><ul id="article-list"></ul>',
-    contact: `<h1>Contact</h1><p>Contact us at [email]</p>`,
+    contact: `<h1>Contact</h1><p>Contact us at swapnilupadhyaykharel@gmail.com</p>`,
     about: `<h1>About</h1><p>This is a portfolio blog.</p>`,
   };
 
