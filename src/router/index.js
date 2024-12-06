@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomePage.vue'
+import articles from '../../articles/articles.json'
+import ArticlePage from '../views/ArticlePage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,7 +19,17 @@ const router = createRouter({
     {
       path: '/articles',
       name: 'articles',
-      component: () => import('../views/ArticlesPage.vue'),
+      component: () => import('../views/AllArticlesPage.vue'),
+    },
+    {
+      path: '/articles/:filename',
+      name: 'ArticlePage',
+      component: ArticlePage,
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: '404',
+      component: () => import('../views/NotFound.vue'),
     },
   ],
 })
