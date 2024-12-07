@@ -2,7 +2,6 @@
 import { ref, onMounted, computed } from 'vue'
 import { useRoute } from 'vue-router'
 
-const route = useRoute()
 const articles = ref([])
 
 onMounted(async () => {

@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import * as marked from 'marked'
+import frontmatter from 'front-matter'
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname)
 
@@ -14,12 +15,16 @@ const generateArticlesJson = () => {
     if (file.endsWith('.md')) {
       const filePath = path.join(articlesDir, file)
       const content = fs.readFileSync(filePath, 'utf-8')
-      const title = file.replace('.md', '').replace(/-/g, ' ')
+
+      const { attributes: data } = frontmatter(content)
       const contentHtml = marked.marked(content)
 
       articles.push({
-        title: file.replace('.md', ''),
+        title: data.title || file.replace('.md', '').replace(/-/g, ' '),
         file: `/articles/${file}`,
+        date: data.date || null,
+        tags: data.tags || [],
+        categories: data.categories || [],
         content: contentHtml,
       })
     }

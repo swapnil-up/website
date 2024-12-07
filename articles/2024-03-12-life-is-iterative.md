@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Life is iterative"
 date:   2024-03-12 
 categories: musings

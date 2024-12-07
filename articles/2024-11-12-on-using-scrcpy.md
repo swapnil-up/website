@@ -1,3 +1,12 @@
+---
+title: "On using scrcpy"
+date:   2024-11-12 
+categories:
+    - devX
+tags:
+    - app development
+    - 
+---
 
 Don't look down, you tech-neck mouth breather. We're all already suffering from bad posture while working on our desks all day. I present to you scrcpy.
 

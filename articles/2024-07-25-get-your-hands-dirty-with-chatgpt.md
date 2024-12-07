@@ -1,3 +1,13 @@
+---
+title: "Get your hands dirty with chatgpt"
+date:   2024-07-25 
+categories:
+    - 
+tags:
+    - productivity
+    - 
+---
+
 Get your hands dirty with chatgpt
 
 “If I have seen further, it is by standing on the shoulder of giants,” wrote Isaac Newton long ago. With the rise of ChatGPT, we’ve heard heralds talk about the loss of the job market, and people skiving work by passing it off to these LLMs. But here I’d like to propose an alternate idea that many have not implemented. The use of ChatGPT as an skilled assistant, while you supervise, stumble and learn along the way. 

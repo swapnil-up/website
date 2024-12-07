@@ -1,3 +1,13 @@
+---
+title: "Divide work into palatable chunks"
+date:   2024-08-01 
+categories:
+    - musings
+tags:
+    - productivity
+    - 
+---
+
 Divide work into palatable chunks
 
 

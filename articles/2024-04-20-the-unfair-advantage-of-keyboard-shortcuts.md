@@ -1,3 +1,14 @@
+---
+title: "The unfair advantage of keyboard shortcuts"
+date:   2024-04-20 
+categories:
+    - 
+tags:
+    - productivity
+    - 
+---
+
+
 The unfair advantage of keyboard shortcuts 
 
 A keyboard press takes 300ms. A mouse movement from one position to another then the press takes about 3 seconds. This is the biggest reasons why we should all learn more keyboard shortcuts. Since we’re all going to be using keyboards and mouses for another 30-40 years, these micro losses of time adds up over time. These results in a loss. Of course there’s the argument that it wouldn’t have mattered anyway, the average user wouldn’t be typing that often either. The delays don’t really matter. Read on. 
