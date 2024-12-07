@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomePage.vue'
-import articles from '../../articles/articles.json'
 import ArticlePage from '../views/ArticlePage.vue'
 
 const router = createRouter({
@@ -25,6 +24,11 @@ const router = createRouter({
       path: '/articles/:filename',
       name: 'ArticlePage',
       component: ArticlePage,
+    },
+    {
+      path: '/tags',
+      name: 'tags',
+      component: () => import('../views/TagsPage.vue'),
     },
     {
       path: '/:catchAll(.*)',

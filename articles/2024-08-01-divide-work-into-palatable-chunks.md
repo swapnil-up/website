@@ -5,7 +5,6 @@ categories:
     - musings
 tags:
     - productivity
-    - 
 ---
 
 Divide work into palatable chunks

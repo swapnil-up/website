@@ -2,10 +2,8 @@
 title: "Get your hands dirty with chatgpt"
 date:   2024-07-25 
 categories:
-    - 
 tags:
     - productivity
-    - 
 ---
 
 Get your hands dirty with chatgpt
