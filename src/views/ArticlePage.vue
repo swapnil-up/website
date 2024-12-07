@@ -1,18 +1,18 @@
 <script setup>
-import { ref, onMounted, computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { ref, onMounted, computed, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
+const router = useRouter()
 const articleContent = ref('')
 const articleDetails = ref(null)
+const articles = ref([])
 
-onMounted(async () => {
-  const filename = route.params.filename
-
+const fetchArticleData = async (filename) => {
   const articlesResponse = await fetch('../../articles/articles.json')
-  const articles = await articlesResponse.json()
+  articles.value = await articlesResponse.json()
 
-  articleDetails.value = articles.find((article) => article.file.endsWith(filename))
+  articleDetails.value = articles.value.find((article) => article.file.endsWith(filename))
 
   const contentResponse = await fetch(`../../articles/${filename}.md`)
   if (contentResponse.ok) {
@@ -21,7 +21,20 @@ onMounted(async () => {
   } else {
     articleContent.value = 'Article not found.'
   }
+}
+
+onMounted(() => {
+  const filename = route.params.filename
+  fetchArticleData(filename)
 })
+
+watch(
+  () => route.params.filename,
+  (newFilename) => {
+    fetchArticleData(newFilename)
+    window.scrollTo(0, 0)
+  },
+)
 
 const tags = computed(() => articleDetails.value?.tags || [])
 
@@ -29,6 +42,20 @@ function removeFrontMatter(text) {
   const frontMatterRegex = /^---\s*\n([\s\S]*?)\n---/
   return text.replace(frontMatterRegex, '').trim()
 }
+
+const currentIndex = computed(() => {
+  return articles.value.findIndex((article) => article.file === articleDetails.value?.file)
+})
+
+const nextArticleUrl = computed(() => {
+  const nextArticle = articles.value[currentIndex.value + 1]
+  return nextArticle ? nextArticle.file.replace('.md', '') : null
+})
+
+const previousArticleUrl = computed(() => {
+  const previousArticle = articles.value[currentIndex.value - 1]
+  return previousArticle ? previousArticle.file.replace('.md', '') : null
+})
 </script>
 
 <template>
@@ -41,9 +68,9 @@ function removeFrontMatter(text) {
     <div v-html="articleContent"></div>
   </div>
 
-  <div class="navigation">
-    <RouterLink :to="nextArticleUrl">Next Article</RouterLink>
-    <RouterLink :to="previousArticleUrl">Previous Article</RouterLink>
+  <div class="navigation" v-if="nextArticleUrl || previousArticleUrl">
+    <RouterLink v-if="previousArticleUrl" :to="previousArticleUrl">Previous Article</RouterLink>
+    <RouterLink v-if="nextArticleUrl" :to="nextArticleUrl">Next Article</RouterLink>
   </div>
 </template>
 
