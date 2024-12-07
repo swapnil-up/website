@@ -1,7 +1,7 @@
 [
   {
     "title": "Anki for internalization of nuggets of wisdom",
-    "file": "/articles/2024-03-11-anki-for-internalization-of-nuggets.md",
+    "file": "/articles/2024-03-11-anki-for-internalization-of-nuggets",
     "date": "2024-03-11T00:00:00.000Z",
     "tags": [
       "productivity",
@@ -15,7 +15,7 @@
   },
   {
     "title": "Life is iterative",
-    "file": "/articles/2024-03-12-life-is-iterative.md",
+    "file": "/articles/2024-03-12-life-is-iterative",
     "date": "2024-03-12T00:00:00.000Z",
     "tags": [],
     "categories": "musings",
@@ -23,7 +23,7 @@
   },
   {
     "title": "Turn on greyscale",
-    "file": "/articles/2024-04-07-turn-on-greyscale.md",
+    "file": "/articles/2024-04-07-turn-on-greyscale",
     "date": "2024-04-07T00:00:00.000Z",
     "tags": [],
     "categories": "musings",
@@ -31,7 +31,7 @@
   },
   {
     "title": "The unfair advantage of keyboard shortcuts",
-    "file": "/articles/2024-04-20-the-unfair-advantage-of-keyboard-shortcuts.md",
+    "file": "/articles/2024-04-20-the-unfair-advantage-of-keyboard-shortcuts",
     "date": "2024-04-20T00:00:00.000Z",
     "tags": [
       "productivity",
@@ -44,7 +44,7 @@
   },
   {
     "title": "Meditation as a warm-up",
-    "file": "/articles/2024-07-23-meditation-as-a-warm-up.md",
+    "file": "/articles/2024-07-23-meditation-as-a-warm-up",
     "date": "2024-07-23T00:00:00.000Z",
     "tags": [
       null,
@@ -57,7 +57,7 @@
   },
   {
     "title": "Get your hands dirty with chatgpt",
-    "file": "/articles/2024-07-25-get-your-hands-dirty-with-chatgpt.md",
+    "file": "/articles/2024-07-25-get-your-hands-dirty-with-chatgpt",
     "date": "2024-07-25T00:00:00.000Z",
     "tags": [
       "productivity",
@@ -70,7 +70,7 @@
   },
   {
     "title": "Divide work into palatable chunks",
-    "file": "/articles/2024-08-01-divide-work-into-palatable-chunks.md",
+    "file": "/articles/2024-08-01-divide-work-into-palatable-chunks",
     "date": "2024-08-01T00:00:00.000Z",
     "tags": [
       "productivity",
@@ -83,7 +83,7 @@
   },
   {
     "title": "On using scrcpy",
-    "file": "/articles/2024-11-12-on-using-scrcpy.md",
+    "file": "/articles/2024-11-12-on-using-scrcpy",
     "date": "2024-11-12T00:00:00.000Z",
     "tags": [
       "app development",

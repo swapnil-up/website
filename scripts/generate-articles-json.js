@@ -19,9 +19,10 @@ const generateArticlesJson = () => {
       const { attributes: data } = frontmatter(content)
       const contentHtml = marked.marked(content)
 
+      const fileWithoutMd = file.replace('.md', '')
       articles.push({
         title: data.title || file.replace('.md', '').replace(/-/g, ' '),
-        file: `/articles/${file}`,
+        file: `/articles/${fileWithoutMd}`,
         date: data.date || null,
         tags: data.tags || [],
         categories: data.categories || [],
