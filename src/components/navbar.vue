@@ -11,7 +11,7 @@ const toggleDarkMode = () => {
     <div class="navbar-container">
       <div class="logo">
         <RouterLink to="/">
-          <img src="../../public/favicon.png" alt="Logo" class="logo-img" />
+          <img src="/favicon.png" alt="Logo" class="logo-img" />
         </RouterLink>
       </div>
 

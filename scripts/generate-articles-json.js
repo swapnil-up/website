@@ -5,8 +5,8 @@ import frontmatter from 'front-matter'
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname)
 
-const articlesDir = path.join(__dirname, '../articles')
-const outputFilePath = path.join(__dirname, '../articles/articles.json')
+const articlesDir = path.join(__dirname, '../public/articles')
+const outputFilePath = path.join(__dirname, '../public/articles/articles.json')
 
 const generateArticlesJson = () => {
   const articles = []

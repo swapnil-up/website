@@ -5,7 +5,7 @@ import { useRoute } from 'vue-router'
 const articles = ref([])
 
 onMounted(async () => {
-  const response = await fetch('../../articles/articles.json')
+  const response = await fetch('/articles/articles.json')
   articles.value = await response.json()
 })
 

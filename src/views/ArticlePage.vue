@@ -9,12 +9,12 @@ const articleDetails = ref(null)
 const articles = ref([])
 
 const fetchArticleData = async (filename) => {
-  const articlesResponse = await fetch('../../articles/articles.json')
+  const articlesResponse = await fetch('/articles/articles.json')
   articles.value = await articlesResponse.json()
 
   articleDetails.value = articles.value.find((article) => article.file.endsWith(filename))
 
-  const contentResponse = await fetch(`../../articles/${filename}.md`)
+  const contentResponse = await fetch(`/articles/${filename}.md`)
   if (contentResponse.ok) {
     const text = await contentResponse.text()
     articleContent.value = removeFrontMatter(text)
