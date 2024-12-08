@@ -6,7 +6,7 @@
   "scripts": {
     "generate:articles": "node scripts/generate-articles-json.js",
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run generate:articles && vite build",
     "preview": "vite preview"
   },
   "dependencies": {

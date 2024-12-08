@@ -1,61 +1,78 @@
 <script setup>
-import { ref, onMounted, computed, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { ref, onMounted, computed, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { marked } from 'marked';
 
-const route = useRoute()
-const router = useRouter()
-const articleContent = ref('')
-const articleDetails = ref(null)
-const articles = ref([])
+const route = useRoute();
+const router = useRouter();
 
-const fetchArticleData = async (filename) => {
-  const articlesResponse = await fetch('../../articles/articles.json')
-  articles.value = await articlesResponse.json()
+const articleContent = ref('');
+const articleDetails = ref(null);
+const articles = ref([]);
 
-  articleDetails.value = articles.value.find((article) => article.file.endsWith(filename))
-
-  const contentResponse = await fetch(`../../articles/${filename}.md`)
-  if (contentResponse.ok) {
-    const text = await contentResponse.text()
-    articleContent.value = removeFrontMatter(text)
-  } else {
-    articleContent.value = 'Article not found.'
+const fetchArticlesJson = async () => {
+  try {
+    const response = await fetch('/articles/articles.json');
+    if (!response.ok) throw new Error('Failed to load articles metadata.');
+    articles.value = await response.json();
+  } catch (error) {
+    console.error('Error loading articles.json:', error.message);
+    articles.value = [];
   }
-}
+};
+
+const fetchArticleContent = async (filename) => {
+  try {
+    const response = await fetch(`/articles/${filename}.md`);
+    if (!response.ok) throw new Error('Article not found.');
+    const markdown = await response.text();
+    articleContent.value = marked(markdown);
+  } catch (error) {
+    console.error('Error loading article content:', error.message);
+    articleContent.value = '<p>Article not found.</p>';
+  }
+};
+
+const loadArticleData = async (filename) => {
+  await fetchArticlesJson();
+  articleDetails.value = articles.value.find((article) =>
+    article.file.endsWith(`${filename}.md`)
+  );
+  await fetchArticleContent(filename);
+};
 
 onMounted(() => {
-  const filename = route.params.filename
-  fetchArticleData(filename)
-})
+  const filename = route.params.filename;
+  loadArticleData(filename);
+});
 
 watch(
   () => route.params.filename,
-  (newFilename) => {
-    fetchArticleData(newFilename)
-    window.scrollTo(0, 0)
-  },
-)
+  async (newFilename) => {
+    await loadArticleData(newFilename);
+    window.scrollTo(0, 0);
+  }
+);
 
-const tags = computed(() => articleDetails.value?.tags || [])
-
-function removeFrontMatter(text) {
-  const frontMatterRegex = /^---\s*\n([\s\S]*?)\n---/
-  return text.replace(frontMatterRegex, '').trim()
-}
+const tags = computed(() => articleDetails.value?.tags || []);
 
 const currentIndex = computed(() => {
-  return articles.value.findIndex((article) => article.file === articleDetails.value?.file)
-})
+  return articles.value.findIndex(
+    (article) => article.file === articleDetails.value?.file
+  );
+});
 
 const nextArticleUrl = computed(() => {
-  const nextArticle = articles.value[currentIndex.value + 1]
-  return nextArticle ? nextArticle.file.replace('.md', '') : null
-})
+  const nextArticle = articles.value[currentIndex.value + 1];
+  return nextArticle ? `${nextArticle.file.replace('.md', '')}` : null;
+});
 
 const previousArticleUrl = computed(() => {
-  const previousArticle = articles.value[currentIndex.value - 1]
-  return previousArticle ? previousArticle.file.replace('.md', '') : null
-})
+  const previousArticle = articles.value[currentIndex.value - 1];
+  return previousArticle
+    ? `${previousArticle.file.replace('.md', '')}`
+    : null;
+});
 </script>
 
 <template>
@@ -103,5 +120,21 @@ h1 {
 div {
   font-size: 1rem;
   white-space: pre-wrap;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #1e90ff;
+  font-weight: bold;
+}
+
+.navigation a:hover {
+  text-decoration: underline;
 }
 </style>
