@@ -31,6 +31,16 @@ const router = createRouter({
       component: () => import('../views/TagsPage.vue'),
     },
     {
+      path: '/now',
+      name: 'now',
+      component: () => import('../views/NowPage.vue'),
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: () => import('../views/ContactPage.vue'),
+    },
+    {
       path: '/:catchAll(.*)',
       name: '404',
       component: () => import('../views/NotFound.vue'),
