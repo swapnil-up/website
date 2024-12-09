@@ -7,7 +7,7 @@ const selectedTags = ref([])
 const articles = ref([])
 
 onMounted(async () => {
-  const articlesResponse = await fetch('../../articles/articles.json')
+  const articlesResponse = await fetch('/articles/articles.json')
   articles.value = await articlesResponse.json()
 })
 
