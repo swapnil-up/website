@@ -1,0 +1,52 @@
+#app {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-weight: normal;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+}
+
+.container {
+    padding: var(--spacing-md);
+    gap: var(--spacing-sm);
+}
+
+button {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    transform: scale(1.05);
+}
