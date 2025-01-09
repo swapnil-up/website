@@ -9,6 +9,7 @@ const route = useRoute()
     <h1>404 - Page Not Found</h1>
     <p>The page you're looking for doesn't exist.</p>
     <p><router-link to="/">Go back to the homepage</router-link></p>
+    <button @click="goHome">Use web.php</button>
   </div>
 </template>
 
