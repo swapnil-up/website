@@ -2,17 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/build', function () {
     return inertia('HomePage');
 });
 
-Route::get('/about', function () {
+Route::get('/build/about', function () {
     return inertia('AboutPage');
 });
-Route::get('/articles', function () {
+
+Route::get('/build/articles', function () {
     return inertia('AllArticlesPage');
 });
-Route::get('/articles/{slug}', function ($slug) {
+
+Route::get('/build/articles/{slug}', function ($slug) {
     $articlesDir = resource_path('articles');
     $articlePath = $articlesDir . '/' . $slug . '.md';
 
@@ -23,15 +25,19 @@ Route::get('/articles/{slug}', function ($slug) {
 
     return inertia('NotFound');
 });
-Route::get('/contact', function () {
+
+Route::get('/build/contact', function () {
     return inertia('ContactPage');
 });
-Route::get('/NowPage', function () {
+
+Route::get('/build/NowPage', function () {
     return inertia('NowPage');
 });
-Route::get('/TagsPage', function () {
+
+Route::get('/build/TagsPage', function () {
     return inertia('TagsPage');
 });
+
 Route::fallback(function () {
     return inertia('NotFound');
 });
