@@ -41,6 +41,13 @@ const router = createRouter({
       component: () => import('../views/ContactPage.vue'),
     },
     {
+        path: '/build/:pathMatch(.*)*', 
+        redirect: (to) => {
+        const path = to.params.pathMatch;
+        return { path: `/${path}` }; 
+        }
+    },
+    {
       path: '/:catchAll(.*)',
       name: '404',
       component: () => import('../views/NotFound.vue'),
